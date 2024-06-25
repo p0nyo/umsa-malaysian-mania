@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Question</title>
+        <link rel="stylesheet" href="../static/css/styles.css"> 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <h1 id="question-h1">Question {{number}}:</h1>
+        <div class="center-content">
+            <p id="question">{{question}}</p>
+            <div class = "question-text" id="question-text">
+                <!-- <p><img src="{{image}}"> --> 
+                <div style= "display:none;">
+                </div>
+                <table id="mtable">
+                    <tr>
+                        <td id="a1" class={{A1}}>A1</td>
+                        <td id="a5" class={{A5}}>A5</td>
+                    </tr>
+                    <tr>
+                        <td id="a2" class={{A2}}>A2</td>
+                        <td id="a6" class={{A6}}>A6</td>
+                    </tr>
+                    <tr>
+                        <td id="a3" class={{A3}}>A3</td>
+                        <td id="a7" class={{A7}}>A7</td>
+                    </tr>
+                    <tr>
+                        <td id="a4" class={{A4}}>A4</td>
+                        <td id="a8" class={{A8}}>A8</td>
+                    </tr>
+                </table>
+                </p>
+            </div> 
+        </div>
+        <div class = "question-button">
+            <button id="back">Previous Question</button>
+            <button id="home">Back Home</button>
+            <button id="next">Next Question</button>
+            
+            
+        </div>
+    </body>
+</html>
+
+
+<script type='text/javascript'>
+    // Get the value and category from the URL query parameters
+    var urlParams = new URLSearchParams(window.location.search);
+    var value = urlParams.get('value');
+    var category = urlParams.get('category');
+
+    var aButton = document.querySelectorAll("#mtable td");
+
+    // The list replacing the answers on click
+    var content = [
+    (document.getElementById('a1')).className +' '+ {{A1P}},
+    (document.getElementById('a2')).className +' '+ {{A5P}},
+    (document.getElementById('a3')).className +' '+ {{A2P}},
+    (document.getElementById('a4')).className +' '+ {{A6P}},
+    (document.getElementById('a5')).className +' '+ {{A3P}},
+    (document.getElementById('a6')).className +' '+ {{A7P}},
+    (document.getElementById('a7')).className +' '+ {{A4P}},
+    (document.getElementById('a8')).className +' '+ {{A8P}}
+    ];
+
+    aButton.forEach(function(aButton, index) {
+        aButton.addEventListener("click", function() {
+            this.textContent = content[index];
+        });
+    });
+
+    var number = parseInt(urlParams.get('number'));
+    var nextButton = document.getElementById('next');
+    var backButton = document.getElementById('back');
+    var homeButton = document.getElementById('home');
+
+    nextButton.addEventListener('click', function() {
+        number = (number + 1).toString();
+        window.location.href = 'question?number=' + number;
+    });
+    backButton.addEventListener('click', function() {
+        number = (number - 1).toString();
+        if (number == "0") {
+            window.location.href = '/';
+        }
+        else {
+        window.location.href =  '/question?number=' + number;
+        }
+    });
+    homeButton.addEventListener('click', function() {
+        window.location.href = '/'
+    })
+
+</script>

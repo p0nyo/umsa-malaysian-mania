@@ -1,0 +1,148 @@
+body {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 20px;
+    font-weight: 400;
+    background-color: #07125B;
+}
+
+#home-h1 {
+    text-align: center;
+    font-family: "IBM Plex Mono", monospace;
+    width:auto;
+    font-weight: 800;
+    font-size: 110px;
+    margin-top: 150px;
+    color: #FFFE53;
+    text-shadow: -5px 0 #FE7C09, 0 5px #FE7C09, 5px 0 #FE7C09, 0 -5px #FE7C09;
+
+}
+
+#question-h1 {
+    text-align: center;
+    font-family: "IBM Plex Mono", monospace;
+    width:auto;
+    font-weight: 800;
+    font-size: 100px;
+    margin-top: auto;
+    color: #FFFE53;
+    text-shadow: -5px 0 #FE7C09, 0 5px #FE7C09, 5px 0 #FE7C09, 0 -5px #FE7C09;
+    /* color: rgba(1, 34, 101, 255); */
+    /* text-shadow: -10px 0 white, 0 2px black, -10px 0 white, 0 -2px black;  */
+}
+
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 auto;
+}
+th, td {
+    border: 5px solid #ffff;
+    padding: 30px; /* increased from 8px */
+    text-align: center;
+}
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+th {
+    background-color: blue;
+    color: rgb(220, 220, 31);
+}
+
+table td {
+    font-size: 40px;
+    color: #ffff;
+    padding: 50px;
+    width: 500px;
+}
+
+table td, table th {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+table td:hover {
+    background-color: lightblue;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+table tr td {
+    background-color: #1A36DC;
+}
+
+@keyframes hover-animation {
+    0% {background-color: #FE7C09; color: black;}
+    50% {background-color: #FFFE53; color: black;}
+    100% {background-color: #FE7C09; color: black;}
+}
+
+table td:hover {
+    animation-name: hover-animation;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+.center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    color: #ffff;
+    font-size: 70px; /* larger text */
+}
+
+.question {
+    display: flex;
+    align-items: center;
+}
+
+#back, #next, #home{
+    margin-top: 20px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 1em; /* reduced from 2em */
+    padding: 0.5em 1em; /* reduced from 1em 2em */
+    background-color: #FE7C09;
+    color: #FFFE53;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#start {
+    margin-top: 20px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 2.7em; /* reduced from 2em */
+    padding: 0.5em 1em; /* reduced from 1em 2em */
+    background-color: #FE7C09;
+    color: #FFFE53;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.question-button, .reveal-button, .start-button {
+    display: flex;
+    justify-content: center;
+}
+
+.question-button {
+    margin-top: 20px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 1em; /* reduced from 2em */
+    padding: 0.5em 1em; /* reduced from 1em 2em */
+    background-color: #FE7C09;
+    color: #FFFE53;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+  
