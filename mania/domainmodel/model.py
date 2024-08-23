@@ -2,9 +2,12 @@ class Question:
     def __init__(self, number, question):
         self.number = number
         self.question = question
+        self.answer = []
         
     def __str__(self):
         return f"Question {self.number}: {self.question}"
+    
+    
         
 # Answer and Points are stored within a list
 # self.a1 = ["a1", 48]
