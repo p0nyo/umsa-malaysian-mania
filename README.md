@@ -14,5 +14,5 @@ $ pip install -r requirements.txt
 # Execution
 ```shell
 $ cd <project directory>
-$ python main.py
+$ flask run
 ```
